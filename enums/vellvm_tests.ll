@@ -1,0 +1,7 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_variants()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer2()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer3()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer4()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer5()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer6()

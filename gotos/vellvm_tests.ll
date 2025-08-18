@@ -1,0 +1,8 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_multiple_three()
+ ; ASSERT_SUCCEEDS: call i64 @test_multiple_three()
+ ; ASSERT_SUCCEEDS: call i64 @test_early_returns()
+ ; ASSERT_SUCCEEDS: call i64 @test_idiomatic_switch()
+ ; ASSERT_SUCCEEDS: call i64 @test_break_multiple_loops()
+ ; ASSERT_SUCCEEDS: call i64 @test_irreducible()
+ ; ASSERT_SUCCEEDS: call i64 @test_stmt_expr_relooper()
+ ; ASSERT_SUCCEEDS: call i64 @test_nothing}()

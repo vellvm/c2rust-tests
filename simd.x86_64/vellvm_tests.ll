@@ -1,0 +1,5 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_unpack_128_2x128()
+ ; ASSERT_SUCCEEDS: call i64 @test_zero_initializers()
+ ; ASSERT_SUCCEEDS: call i64 @test_shuffle_vectors()
+ ; ASSERT_SUCCEEDS: call i64 @test_vector_init_lists()
+ ; ASSERT_SUCCEEDS: call i64 @test_static_init_lists()

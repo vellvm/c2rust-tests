@@ -1,0 +1,6 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_sized_array_impls()
+ ; ASSERT_SUCCEEDS: call i64 @test_global_incomplete_array()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer2()
+ ; ASSERT_SUCCEEDS: call i64 @test_variable_arrays()
+ ; ASSERT_SUCCEEDS: call i64 @test_alloca_arrays()

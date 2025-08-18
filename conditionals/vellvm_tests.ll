@@ -1,0 +1,5 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer2()
+ ; ASSERT_SUCCEEDS: call i64 @test_binary_conditionals()
+ ; ASSERT_SUCCEEDS: call i64 @test_unused_conditional()
+ ; ASSERT_SUCCEEDS: call i64 @test_else_if_chain()

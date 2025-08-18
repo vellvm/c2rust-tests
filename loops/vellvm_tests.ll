@@ -1,0 +1,5 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_goto_linear()
+ ; ASSERT_SUCCEEDS: call i64 @test_goto_loop()
+ ; ASSERT_SUCCEEDS: call i64 @test_goto_switch()
+ ; ASSERT_SUCCEEDS: call i64 @test_buffer()
+ ; ASSERT_SUCCEEDS: call i64 @test_switch()

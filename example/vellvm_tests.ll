@@ -1,0 +1,6 @@
+ ; ASSERT_SUCCEEDS: call i64 @test_addition()
+ ; ASSERT_SUCCEEDS: call i64 @test_overflow()
+ ; ASSERT_SUCCEEDS: call i64 @test_foo()
+ ; ASSERT_SUCCEEDS: call i64 @test_xfails()
+ ; ASSERT_SUCCEEDS: call i64 @test_subtraction()
+ ; ASSERT_SUCCEEDS: call i64 @test_underflow()
