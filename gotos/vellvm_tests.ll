@@ -5,4 +5,4 @@
  ; ASSERT SUCCEEDS: call i64 @test_break_multiple_loops()
  ; ASSERT SUCCEEDS: call i64 @test_irreducible()
  ; ASSERT SUCCEEDS: call i64 @test_stmt_expr_relooper()
- ; ASSERT SUCCEEDS: call i64 @test_nothing}()
+ ; ASSERT SUCCEEDS: call i64 @test_nothing()
