@@ -1,1 +1,1 @@
- ; ASSERT_SUCCEEDS: call i64 @test_modules}()
+ ; ASSERT SUCCEEDS: call i64 @test_modules}()

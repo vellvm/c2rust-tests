@@ -1,1 +1,1 @@
- ; ASSERT_SUCCEEDS: call i64 @test_comments()
+ ; ASSERT SUCCEEDS: call i64 @test_comments()
