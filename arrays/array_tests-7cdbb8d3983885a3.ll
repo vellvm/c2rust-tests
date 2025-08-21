@@ -7822,6 +7822,7 @@ bb54:                                             ; preds = %bb53
   %225 = getelementptr inbounds i32, i32* %buffer, i64 %_251, !dbg !4918
   store i32* %225, i32** %21, align 8, !dbg !4918
   %_3.i174 = load i32*, i32** %21, align 8, !dbg !4918
+  call void @llvm.vellvm.internal.throw()
   br label %bb55, !dbg !4919
 
 panic24:                                          ; preds = %bb53

@@ -1,0 +1,222 @@
+* c2rust Test Cases in Vellvm
+
+* [3/6] arrays
+
+- [X] @test_sized_array_impls()
+- [X] @test_global_incomplete_array()
+- [ ] @test_buffer()
+- [X] @test_buffer2()
+- [ ] @test_variable_arrays()
+- [ ] @test_alloca_arrays()
+
+The other test cases seem to loop.
+
+* [0/1] asm.*
+
+These won't work because we don't support inline assembly.
+
+- [ ] @test_buffer()
+
+* [0/6] builtins
+
+Lots of ~atomicrmw~ instructions that we cannot parse.
+
+- [ ] @test_atomics()
+- [ ] @test_new_atomics()
+- [ ] @test_mem_fns()
+- [ ] @test_ffs()
+- [ ] @test_clang9_intrinsics()
+- [ ] @test_assume_aligned()
+
+* [3/3] casts
+
+- [X] @test_compiles()
+- [X] @test_buffer()
+- [X] @test_identity()
+
+* [1/1] comments
+
+- [X] @test_comments()
+
+* [5/5] conditionals
+
+- [X] @test_buffer()
+- [X] @test_buffer2()
+- [X] @test_binary_conditionals()
+- [X] @test_unused_conditional()
+- [X] @test_else_if_chain()
+
+* [7/7] enums
+
+- [X] @test_variants()
+- [X] @test_buffer()
+- [X] @test_buffer2()
+- [X] @test_buffer3()
+- [X] @test_buffer4()
+- [X] @test_buffer5()
+- [X] @test_buffer6()
+
+* [6/6] example
+
+- [X] @test_addition()
+- [X] @test_overflow()
+- [X] @test_subtraction()
+- [X] @test_underflow()
+- [X] @test_foo()
+  + Expected failure
+- [X] @test_xfails()
+  + Expected failure
+
+* [2/2] floats
+
+- [X] @test_buffer()
+- [X] @test_inc_dec_op()
+
+* [7/8] gotos
+
+- [ ] @test_dfa_multiple_test_multiple_three()
+  + ERROR: Uninterpreted Call: Call with return type (DTYPE_I 1), 2 dvalues.
+- [X] @test_duffs_test_multiple_three()
+- [X] @test_early_returns()
+- [X] @test_idiomatic_switch()
+- [X] @test_break_multiple_loops()
+- [X] @test_irreducible()
+- [X] @test_stmt_expr_relooper()
+- [X] @test_nothing()
+
+* [7/9] ints
+
+- [X] @test_arithmetic_test_buffer()
+- [X] @test_compound_assignment_test_buffer()
+- [X] @test_const()
+- [X] @test_size_t_buffer()
+- [X] @test_chars_buffer()
+- [ ] @test_sieve_test_buffer()
+  + This one takes forever, may be caught in a loop.
+- [ ] @test_volatile_test_buffer()
+  + This one fails because of an unimplemented numeric conversion (I think fptosi)
+- [X] @test_identity()
+- [X] @test_implicit_int()
+
+* [4/13] items
+
+I didn't look too far into these tests. Lots of unimplemented calls,
+but these test cases seem to use weird language features.
+
+- [ ] @test_fn_attrs()
+- [X] @test_coreutils_static_assert()
+- [X] @test_linking()
+- [X] @test_noop()
+- [X] @test_nofnargs()
+- [ ] @test_call_printf()
+- [ ] @test_call_vprintf()
+- [ ] @test_my_printf()
+- [ ] @test_simple_vacopy()
+- [ ] @test_valist_struct_member()
+- [ ] @test_valist_struct_pointer_member()
+- [ ] @test_restart_valist()
+- [ ] @test_sample_stddev()
+
+* [0/3] longdouble
+
+Not able to run these because of parsing failures on x86_fp80
+literals.
+
+- [ ] @test_long_double_ops()
+- [ ] @test_long_double_casts()
+- [ ] @test_global_f128s()
+
+* [4/5] loops
+
+- [X] @test_goto_linear()
+- [X] @test_goto_loop()
+- [X] @test_goto_switch()
+- [ ] @test_buffer()
+- [X] @test_switch()
+
+* [0/3] macros
+
+Need to be able to parse ~thread_local~ as well as ~atomicrmw~
+instructions.
+
+- [ ] @test_define()
+- [ ] @test_zstd_define()
+- [ ] @test_macro_stmt_expr()
+
+* [10/13] misc
+
+- [ ] @test_exprs()
+  + ERROR: Uninterpreted Call: Call with return type (DTYPE_Struct [(DTYPE_I 8); (DTYPE_I 1)]), 2 dvalues.
+- [X] @test_lvalue()
+- [ ] @test_malloc()
+  + ERROR: Uninterpreted Call: Call with return type DTYPE_Pointer, 2 dvalues.
+- [X] @test_memset()
+- [X] @test_swap()
+- [X] @test_partition()
+- [X] @test_quicksort()
+- [X] @test_twice()
+- [X] @test_shadowing()
+- [ ] @test_sizeofs()
+  + Slow. May be looping.
+- [X] @test_typedef()
+- [X] @test_buffer()
+- [X] @test_types()
+
+* [1/1] modules
+
+- [X] @test_modules()
+
+* [2/3] pointers
+
+- [X] @test_init()
+- [X] @test_arith()
+- [ ] @test_fn_ptrs()
+  + This fails because of the ill-typed call that ends up with a type
+    error on the sext instruction.
+
+* [0/5] simd.x86_64
+
+Parse failure due to ~load atomic~ instructions.
+
+- [ ] @test_unpack_128_2x128()
+- [ ] @test_zero_initializers()
+- [ ] @test_shuffle_vectors()
+- [ ] @test_vector_init_lists()
+- [ ] @test_static_init_lists()
+
+* [0/4] statics
+
+Parse failures due to ~thread_local~, and possibly
+~local_unnamed_addr~.
+
+- [ ] @test_sectioned_statics()
+- [ ] @test_sectioned_used_static()
+- [ ] @test_buffer()
+- [ ] @test_thread_locals()
+
+* [0/17] structs
+
+Parse failures ~thread_local~, ~atomicrmw~, etc. Test case name
+overlap with ~test_buffer~, may need to rename test cases.
+
+- [ ] @test_anonymous_decl()
+- [ ] @test_three_byte_date()
+- [ ] @test_padded_bitfield()
+- [ ] @test_static_bitfield()
+- [ ] @test_bf_arrays_and_pointers()
+- [ ] @test_from_csmith()
+- [ ] @test_returned_bitfield_ptr()
+- [ ] @test_size_of_two_eight_bits()
+- [ ] @test_multiple_assignments()
+- [ ] @test_flex_array_members()
+- [ ] @test_buffer()
+- [ ] @test_buffer2}()
+- [ ] @test_struct_with_exp()
+- [ ] @test_buffer()
+- [ ] @test_alignment()
+- [ ] @test_alignments()
+- [ ] @test_get_offset()
+
+* [1/1] unions
+
+- [X] @test_buffer()
