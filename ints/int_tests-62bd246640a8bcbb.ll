@@ -2827,6 +2827,8 @@ panic2:                                           ; preds = %bb8
 bb10:                                             ; preds = %bb13, %bb9
   %_28 = load i32, i32* %i, align 4, !dbg !1963
   %_27 = icmp sle i32 %_28, 100, !dbg !1963
+  %foo = call i32 (ptr, ...) @printf(ptr noundef @.myfmt2, i32 %_16.0, i32 %_16.0)
+  call void @llvm.vellvm.internal.throw()
   br i1 %_27, label %bb11, label %bb14, !dbg !1963
 
 bb11:                                             ; preds = %bb10

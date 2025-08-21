@@ -1,5 +1,5 @@
- ; ASSERT SUCCEEDS: call i64 @test_multiple_three()
- ; ASSERT SUCCEEDS: call i64 @test_multiple_three()
+ ; ASSERT SUCCEEDS: call i64 @test_dfa_multiple_test_multiple_three()
+ ; ASSERT SUCCEEDS: call i64 @test_duffs_test_multiple_three()
  ; ASSERT SUCCEEDS: call i64 @test_early_returns()
  ; ASSERT SUCCEEDS: call i64 @test_idiomatic_switch()
  ; ASSERT SUCCEEDS: call i64 @test_break_multiple_loops()
