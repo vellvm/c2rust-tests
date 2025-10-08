@@ -13,5 +13,5 @@ $(PATH_TO_VELLVM_SRC)/vellvm -v -l $(PATH_TO_VELLVM_SRC)/libll/rust-intrinsics.l
 For example, to run it on the c2rust tests in the `example` directory, do:
 
 ```
-~/vellvm/src/vellvm -v -l ~/vellvm/src/vellvm/libll/rust-intrinsics.ll -l example/linked.ll -test-file example/vellvm_tests.ll
+~/vellvm/src/vellvm -v -l ~/vellvm/src/libll/rust-intrinsics.ll -l example/linked.ll -test-file example/vellvm_tests.ll
 ```
