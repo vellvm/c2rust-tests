@@ -1,17 +1,30 @@
-c2rust tests adapted for use with Vellvm
+# c2rust tests adapted for use with Vellvm
+
+## Structure
 
 Each c2rust test directory has:
 - a `linked.ll` file that contains the combined LLVM IR code
 - a `vellvm_tests.ll` file that contains some Vellvm-style assertions for use with its testing framework
 
+## Manually running test cases
+
 To run a test, execute the following command, where `$(PATH_TO_VELLVM_SRC)` is the directory where the `vellvm` executable and `libll` files live and `$(TESTDIR)` is one of the c2rust test directories.
 
 ```
-$(PATH_TO_VELLVM_SRC)/vellvm -v -l $(PATH_TO_VELLVM_SRC)/libll/rust-intrinsics.ll -l $(TESTDIR)/linked.ll -test-file $(TESTDIR)/vellvm_tests.ll
+$(VELLVM_DIR)/src/vellvm -v -l $(VELLVM_DIR)/src/libll/rust-intrinsics.ll -l $(VELLVM_DIR)/src/libll/c-lib.ll $(TESTDIR)/linked.ll -test-file $(TESTDIR)/vellvm_tests.ll
 ```
 
 For example, to run it on the c2rust tests in the `example` directory, do:
 
 ```
-~/vellvm/src/vellvm -v -l ~/vellvm/src/vellvm/libll/rust-intrinsics.ll -l example/linked.ll -test-file example/vellvm_tests.ll
+~/vellvm/src/vellvm -v -l ~/vellvm/src/libll/rust-intrinsics.ll -l ~/vellvm/src/libll/lib-c.ll -l example/linked.ll -test-file example/vellvm_tests.ll
 ```
+
+## Makefile
+
+You can also run all of the test cases by doing the following, where `<<path to /vellvm>>` is the path to the Vellvm git repo.  (By default it is `~/vellvm`.)
+
+```
+make VELLVM_DIR=<<path to /vellvm>>
+```
+
