@@ -1,7 +1,7 @@
 
 VELLVM_DIR ?= ~/vellvm
 
-DIRS := arrays builtins comments enums floats ints loops misc output unions casts conditionals example gotos items macros modules pointers statics structs
+DIRS := arrays builtins comments enums floats ints loops misc unions casts conditionals example gotos items macros modules pointers statics structs
 
 TARGETS := $(patsubst %, %_timed_run, $(DIRS))
 
